@@ -24,6 +24,10 @@
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\raw\test_identity.csv" />
+    <Content Include="data\raw\test_transaction.csv" />
+    <Content Include="data\raw\train_identity.csv" />
+    <Content Include="data\raw\train_transaction.csv" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
