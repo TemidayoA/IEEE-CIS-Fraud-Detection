@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
+    <Compile Include="src\config.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\raw\test_identity.csv" />
