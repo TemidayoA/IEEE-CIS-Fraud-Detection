@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
     <Compile Include="src\config.py" />
+    <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\raw\test_identity.csv" />
