@@ -25,6 +25,7 @@
     <Compile Include="src\config.py" />
     <Compile Include="src\data_loader.py" />
     <Compile Include="src\feature_engineering.py" />
+    <Compile Include="src\inference.py" />
     <Compile Include="src\preprocessing.py" />
     <Compile Include="src\train.py" />
     <Compile Include="src\__init__.py" />
