@@ -38,6 +38,9 @@
     <Content Include="data\raw\test_transaction.csv" />
     <Content Include="data\raw\train_identity.csv" />
     <Content Include="data\raw\train_transaction.csv" />
+    <Content Include="LICENSE" />
+    <Content Include="notebooks\exploration.ipynb" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
