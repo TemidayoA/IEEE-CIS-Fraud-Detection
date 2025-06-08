@@ -1,9 +1,18 @@
 from fastapi import FastAPI
 import joblib
 import pandas as pd
+import yaml
 
 app = FastAPI()
 model = joblib.load("models/fraud_lgbm.pkl")
+
+
+with open("configs/inference.yaml") as f:
+    cfg = yaml.safe_load(f)
+
+pipeline = joblib.load(cfg["model_path"])
+threshold = joblib.load(cfg["threshold_path"])
+
 
 @app.post("/predict")
 def predict(payload: dict):
