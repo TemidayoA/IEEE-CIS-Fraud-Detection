@@ -4,6 +4,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 from config import MODEL_PARAMS, TARGET
 
+import numpy as np
+
+pos = y_train.sum()
+neg = len(y_train) - pos
+
+scale_pos_weight = neg / pos
+
+MODEL_PARAMS["scale_pos_weight"] = scale_pos_weight
+
 def train(df):
     y = df[TARGET]
     X = df.drop(columns=[TARGET, "TransactionID"])
