@@ -5,6 +5,9 @@ from sklearn.metrics import roc_auc_score
 from config import MODEL_PARAMS, TARGET
 
 import numpy as np
+FEATURE_NAMES = X_train.columns.tolist()
+
+joblib.dump(FEATURE_NAMES, "models/feature_names.pkl")
 
 pos = y_train.sum()
 neg = len(y_train) - pos
