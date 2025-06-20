@@ -13,3 +13,9 @@ def categorical_drift(train, live):
 
     _, p, _, _ = chi2_contingency(table)
     return p < 0.05
+REFERENCE = joblib.load("models/reference_stats.pkl")
+
+def detect_drift(feature, live_data):
+    ref = REFERENCE[feature]
+    stat, p = ks_2samp(ref, live_data)
+    return p < 0.05

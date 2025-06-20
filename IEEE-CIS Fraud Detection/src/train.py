@@ -9,6 +9,16 @@ FEATURE_NAMES = X_train.columns.tolist()
 
 joblib.dump(FEATURE_NAMES, "models/feature_names.pkl")
 
+import joblib
+
+reference_stats = {
+    col: X_train[col].sample(5000, random_state=42)
+    for col in X_train.columns
+}
+
+joblib.dump(reference_stats, "models/reference_stats.pkl")
+
+
 pos = y_train.sum()
 neg = len(y_train) - pos
 
