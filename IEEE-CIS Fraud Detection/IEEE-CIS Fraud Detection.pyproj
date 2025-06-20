@@ -25,6 +25,7 @@
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
     <Compile Include="monitoring\data_drift.py" />
     <Compile Include="src\config.py" />
+    <Compile Include="src\contract.py" />
     <Compile Include="src\data_loader.py" />
     <Compile Include="src\evaluation.py" />
     <Compile Include="src\explainability.py" />
