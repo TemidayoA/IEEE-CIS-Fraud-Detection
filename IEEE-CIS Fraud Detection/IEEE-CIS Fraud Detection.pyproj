@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="api\main.py" />
+    <Compile Include="features\temporal.py" />
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
     <Compile Include="monitoring\data_drift.py" />
     <Compile Include="src\config.py" />
@@ -52,6 +53,7 @@
     <Folder Include="models\" />
     <Folder Include="api\" />
     <Folder Include="monitoring\" />
+    <Folder Include="features\" />
     <Folder Include="notebooks\" />
     <Folder Include="src\" />
   </ItemGroup>
