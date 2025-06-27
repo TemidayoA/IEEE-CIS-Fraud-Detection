@@ -36,6 +36,7 @@
     <Compile Include="src\security.py" />
     <Compile Include="src\train.py" />
     <Compile Include="src\__init__.py" />
+    <Compile Include="utils\cache.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\raw\test_identity.csv" />
@@ -54,6 +55,7 @@
     <Folder Include="api\" />
     <Folder Include="monitoring\" />
     <Folder Include="features\" />
+    <Folder Include="utils\" />
     <Folder Include="notebooks\" />
     <Folder Include="src\" />
   </ItemGroup>
