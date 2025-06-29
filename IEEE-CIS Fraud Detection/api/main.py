@@ -43,3 +43,9 @@ def predict(payload: FraudRequest):
 
     prediction_cache[tx_id] = result
     return result
+
+@app.post("/predict")
+def predict(payload: FraudRequest):
+    df = pd.DataFrame([payload.dict()])
+    prob = model.predict_proba(df)[:, 1][0]
+    return {"fraud_probability": prob}
