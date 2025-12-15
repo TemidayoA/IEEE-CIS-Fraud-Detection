@@ -57,3 +57,19 @@ fraud-detection/
 ├── Makefile                   # Build automation
 └── README.md                  # This file
 
+# configs/features.yaml
+feature_groups:
+  temporal_features:
+    - transaction_hour
+    - day_of_week
+    - time_since_last_transaction
+  
+  behavioral_features:
+    - avg_transaction_amount_7d
+    - transaction_velocity_24h
+    - device_fingerprint_changes
+  
+  network_features:
+    - ip_address_risk_score
+    - geographic_velocity
+    - proxy_detection
