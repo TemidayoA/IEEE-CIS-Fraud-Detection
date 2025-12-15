@@ -24,6 +24,8 @@
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
     <Compile Include="src\config.py" />
     <Compile Include="src\data_loader.py" />
+    <Compile Include="src\feature_engineering.py" />
+    <Compile Include="src\preprocessing.py" />
     <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
