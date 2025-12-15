@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\main.py" />
     <Compile Include="IEEE_CIS_Fraud_Detection.py" />
     <Compile Include="src\config.py" />
     <Compile Include="src\data_loader.py" />
@@ -42,6 +43,7 @@
     <Folder Include="data\" />
     <Folder Include="data\raw\" />
     <Folder Include="models\" />
+    <Folder Include="api\" />
     <Folder Include="notebooks\" />
     <Folder Include="src\" />
   </ItemGroup>
