@@ -1,4 +1,4 @@
-# Fraud Detection Project
+﻿# Fraud Detection Project
 
 ## Overview
 This is a **production-ready end-to-end fraud detection system** built with Python.  
@@ -15,4 +15,45 @@ It includes:
 ---
 
 ## Project Structure
+fraud-detection/
+├── 📁 configs/                 # Configuration files
+│   ├── training.yaml          # Training hyperparameters
+│   ├── inference.yaml         # Serving configuration
+│   └── monitoring.yaml        # Alert thresholds
+│
+├── 📁 data/                    # Data management
+│   ├── raw/                   # Raw transaction data
+│   ├── processed/             # Feature engineered data
+│   └── feature_store/         # Online feature store
+│
+├── 📁 src/                     # Source code
+│   ├── 📁 api/                # FastAPI application
+│   ├── 📁 models/             # ML model implementations
+│   ├── 📁 features/           # Feature engineering
+│   ├── 📁 monitoring/         # Performance tracking
+│   └── 📁 utils/              # Shared utilities
+│
+├── 📁 models/                  # Trained model artifacts
+│   ├── fraud_v1/              # Versioned model packages
+│   └── champion_challenger/   # A/B test models
+│
+├── 📁 notebooks/               # Research & analysis
+│   ├── EDA.ipynb              # Exploratory analysis
+│   ├── feature_analysis.ipynb # Feature importance
+│   └── model_experiments.ipynb# Hyperparameter tuning
+│
+├── 📁 tests/                   # Test suite
+│   ├── unit/                  # Unit tests
+│   ├── integration/           # Integration tests
+│   └── performance/           # Load tests
+│
+├── 📁 deployment/              # Deployment configurations
+│   ├── docker/                # Container definitions
+│   ├── kubernetes/            # K8s manifests
+│   └── terraform/             # Infrastructure as code
+│
+├── requirements.txt           # Python dependencies
+├── Dockerfile                 # Container build
+├── Makefile                   # Build automation
+└── README.md                  # This file
 
