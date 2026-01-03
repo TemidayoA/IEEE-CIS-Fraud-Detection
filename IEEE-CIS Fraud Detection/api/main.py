@@ -23,3 +23,23 @@ def predict(payload: dict):
         "fraud_probability": round(float(prob), 4),
         "is_fraud": prob > 0.5
     }
+
+from src.utils.cache import prediction_cache
+
+@app.post("/predict")
+def predict(payload: FraudRequest):
+    tx_id = payload.TransactionID
+
+    if tx_id in prediction_cache:
+        return prediction_cache[tx_id]
+
+    df = pd.DataFrame([payload.dict()])
+    prob = model.predict_proba(df)[:, 1][0]
+
+    result = {
+        "fraud_probability": round(float(prob), 4),
+        "is_fraud": prob > 0.5
+    }
+
+    prediction_cache[tx_id] = result
+    return result

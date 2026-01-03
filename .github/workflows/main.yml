@@ -1,0 +1,61 @@
+name: Release
+
+# Trigger workflow when a release is published or a tag is pushed
+on:
+  release:
+    types: [published]
+  push:
+    tags:
+      - 'v*'  # Matches tags like v1.0, v1.1
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. Optional: Run tests
+      - name: Run tests
+        run: |
+          # Add your test commands here if you have any
+          echo "No tests defined"
+
+      # 5. Package the model & code
+      - name: Package artifacts
+        run: |
+          mkdir -p release
+          cp -r src/ models/ README.md LICENSE release/
+
+      # 6. Create GitHub release and upload artifacts
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 7. Upload artifact to the release
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release/**
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
